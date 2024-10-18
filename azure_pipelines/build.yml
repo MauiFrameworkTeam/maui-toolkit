@@ -3,24 +3,24 @@ trigger: none
 pr: none
 
 pool:
-  vmImage: 'windows-2022'
+  vmImage: 'macOS-14'
 variables:
   BUILD_ON_VM: 'true'
 steps:
-# - task: CmdLine@2
-#   displayName: 'Set Latest XCode Version'
-#   inputs:
-#     script: 'sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer'
+- task: CmdLine@2
+  displayName: 'Set Latest XCode Version'
+  inputs:
+    script: 'sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer'
 
-# - task: CmdLine@2
-#   displayName: 'Install Latest .NET MAUI Workload'
-#   inputs:
-#     script: 'dotnet workload install maui maui-android maui-windows maui-ios maui-maccatalyst maui-tizen android ios maccatalyst macos mobile-librarybuilder'
+- task: CmdLine@2
+  displayName: 'Install Latest .NET MAUI Workload'
+  inputs:
+    script: 'dotnet workload install maui maui-android maui-windows maui-ios maui-maccatalyst maui-tizen android ios maccatalyst macos mobile-librarybuilder'
  
-# - task: CmdLine@2
-#   displayName: 'Install Tizen Workload'
-#   inputs:
-#     script: 'curl -sSL https://raw.githubusercontent.com/Samsung/Tizen.NET/main/workload/scripts/workload-install.sh | sudo bash'
+- task: CmdLine@2
+  displayName: 'Install Tizen Workload'
+  inputs:
+    script: 'curl -sSL https://raw.githubusercontent.com/Samsung/Tizen.NET/main/workload/scripts/workload-install.sh | sudo bash'
 
 - script: |
     cd $(Agent.BuildDirectory)/s/
@@ -34,7 +34,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'D:\a\1\s\maui\tests\Syncfusion.Maui.Toolkit.UnitTest\TestResults'
+    PathtoPublish: '/Users/runner/work/1/s/maui/tests/Syncfusion.Maui.Toolkit.UnitTest/TestResults'
     ArtifactName: 'UnitTestResults'
     publishLocation: 'Container'
   displayName: 'Publish Test Results HTML'
