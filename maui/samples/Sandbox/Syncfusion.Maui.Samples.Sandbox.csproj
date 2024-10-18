@@ -48,7 +48,10 @@
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningLevel>5</WarningLevel>
 	</PropertyGroup>
-	
+
+  <PropertyGroup Condition="'$(BUILD_ON_VM)' == 'true'">
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->

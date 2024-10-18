@@ -82,7 +82,10 @@
 		<WarningLevel>5</WarningLevel>	  
     <Optimize>True</Optimize>
 	</PropertyGroup>
-	
+
+  <PropertyGroup Condition="'$(BUILD_ON_VM)' == 'true'">
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
 
 	<Import Project="..\..\targets\MultiTargeting.targets" />
 	

@@ -59,6 +59,10 @@
 		<!-- NOTE: not recommended for Debug builds! -->
 		<AndroidLinkTool>r8</AndroidLinkTool>
 	</PropertyGroup>
+
+  <PropertyGroup Condition="'$(BUILD_ON_VM)' == 'true'">
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
 	
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows')) and '$(Configuration)' == 'Release'">
 		<GenerateAppxPackageOnBuild>true</GenerateAppxPackageOnBuild>
