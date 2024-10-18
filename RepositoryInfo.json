@@ -1,0 +1,30 @@
+{
+  "Name": "maui-toolkit",
+  "Platforms": [
+    {
+      "Name": "Toolkit",
+      "Assemblies": [
+        {
+          "Name": "Syncfusion.Maui.Toolkit",
+          "EnableFxCopAnalyzer": false,
+          "EnableStyleCopAnalyzer": false,
+          "TreatWarningsAsErrors": true
+        },
+		{
+          "Name": "Syncfusion.Maui.Toolkit.UnitTest",
+          "EnableFxCopAnalyzer": false,
+          "EnableStyleCopAnalyzer": false,
+          "TreatWarningsAsErrors": true
+        }
+        ],
+	        "SampleBrowsers": [
+           {
+			        "Name": "Syncfusion.Maui.ControlsGallery"
+           },
+	   {
+			        "Name": "Syncfusion.Maui.Samples.Sandbox"
+           }
+      ]
+    }
+  ]
+}
