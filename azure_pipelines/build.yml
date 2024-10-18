@@ -24,7 +24,7 @@ steps:
 
 - script: |
     cd $(Agent.BuildDirectory)/s/
-    dotnet build
+    dotnet build -c Release
   displayName: 'Build the solution'
 
 - script: |
@@ -34,7 +34,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '/Users/runner/work/1/s/maui/tests/Syncfusion.Maui.Toolkit.UnitTest/TestResults'
+    PathtoPublish: 'D:\a\1\s\maui\tests\Syncfusion.Maui.Toolkit.UnitTest\TestResults'
     ArtifactName: 'UnitTestResults'
     publishLocation: 'Container'
   displayName: 'Publish Test Results HTML'
+
