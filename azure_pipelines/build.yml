@@ -24,5 +24,10 @@ steps:
 
 - script: |
     cd $(Agent.BuildDirectory)/s/
-    dotnet build -v diag
+    dotnet build -v d
   displayName: 'Build the solution'
+
+- script: |
+    cd $(Agent.BuildDirectory)/s/maui/tests/Syncfusion.Maui.Toolkit.UnitTest/
+    dotnet test --logger "html;logfilename=testResults.html"
+  displayName: 'Perform Unit Tests'
