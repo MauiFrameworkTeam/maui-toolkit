@@ -6,6 +6,20 @@ pool:
   vmImage: 'macos-14'
 
 steps:
+- task: CmdLine@2
+  displayName: 'Set Latest XCode Version'
+  inputs:
+    script: 'sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer'
+
+- task: CmdLine@2
+  displayName: 'Install Latest .NET MAUI Workload'
+  inputs:
+    script: 'dotnet workload install maui maui-android maui-windows maui-ios maui-maccatalyst maui-tizen android ios maccatalyst macos mobile-librarybuilder'
+ 
+- task: CmdLine@2
+  displayName: 'Install Tizen Workload'
+  inputs:
+    script: 'curl -sSL https://raw.githubusercontent.com/Samsung/Tizen.NET/main/workload/scripts/workload-install.sh | sudo bash'
 
 - script: |
     cd $(Agent.BuildDirectory)/s/
