@@ -13,7 +13,7 @@ steps:
  
 - script: |
     cd $(Agent.BuildDirectory)/s/maui/tests/Syncfusion.Maui.Toolkit.UnitTest/
-    dotnet test --logger "html;logfilename=testResults.html"
+    dotnet test --logger "html;logfilename=UnitTestResults.html"
   displayName: 'Perform Unit Tests'
  
 - task: PublishBuildArtifacts@1
