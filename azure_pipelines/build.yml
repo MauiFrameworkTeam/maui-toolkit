@@ -31,3 +31,10 @@ steps:
     cd $(Agent.BuildDirectory)/s/maui/tests/Syncfusion.Maui.Toolkit.UnitTest/
     dotnet test --logger "html;logfilename=testResults.html"
   displayName: 'Perform Unit Tests'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/**/testResults.html'
+    ArtifactName: 'UnitTestResults'
+    publishLocation: 'Container'
+  displayName: 'Publish Test Results HTML'
