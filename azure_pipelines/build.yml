@@ -7,10 +7,10 @@ pool:
 variables:
   BUILD_ON_VM: 'true'
 steps:
-- task: CmdLine@2
-  displayName: 'Set Latest XCode Version'
-  inputs:
-    script: 'sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer'
+# - task: CmdLine@2
+#   displayName: 'Set Latest XCode Version'
+#   inputs:
+#     script: 'sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer'
 
 - task: CmdLine@2
   displayName: 'Install Latest .NET MAUI Workload'
