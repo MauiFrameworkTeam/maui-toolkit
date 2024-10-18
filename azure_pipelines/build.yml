@@ -24,7 +24,7 @@ steps:
 
 - script: |
     cd $(Agent.BuildDirectory)/s/
-    dotnet build -v d
+    dotnet build
   displayName: 'Build the solution'
 
 - script: |
